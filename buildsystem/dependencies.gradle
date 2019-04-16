@@ -10,11 +10,15 @@ ext {
     applicationVersionCode = 1
     applicationVersionName = "1.0"
 
-
     //Android
     androidMinSdkVersion = 15
     androidTargetSdkVersion = 28
     androidCompileSdkVersion = 28
+    playServiceVersion = "16.0.0"
+
+    //Reactive
+    rxJava2Version = '2.2.3'
+    rxAndroidVersion = '2.1.0'
 
     //Libraries
     daggerVersion = "2.22.1"
@@ -35,7 +39,10 @@ ext {
             supportAppCompatV7: "com.android.support:appcompat-v7:${appCompatVersion}",
             supportDesign: "com.android.support:design:${supportDesignVersion}",
             constraintLayout: "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
-            vectorDrawable: "com.android.support:support-vector-drawable:${vectorDrawableVersion}"
+            vectorDrawable: "com.android.support:support-vector-drawable:${vectorDrawableVersion}",
+            rxJava2: "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            playServicesLocation: "com.google.android.gms:play-services-location:${playServiceVersion}"
     ]
 
     testDependencies = [

@@ -1,17 +1,12 @@
-apply plugin: 'com.android.application'
-
-apply plugin: 'kotlin-android'
-
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
-
-apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
-
     compileSdkVersion globalConfiguration.get("androidCompileSdkVersion")
+
     defaultConfig {
-        applicationId globalConfiguration.get("applicationId")
         minSdkVersion globalConfiguration.get("androidMinSdkVersion")
         targetSdkVersion globalConfiguration.get("androidTargetSdkVersion")
         versionCode globalConfiguration.get("applicationVersionCode")
@@ -19,12 +14,14 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -32,18 +29,14 @@ dependencies {
     def testDependencies = rootProject.ext.testDependencies
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation dependencies.kotlin
-    implementation dependencies.supportAppCompatV7
-    implementation dependencies.supportDesign
-    implementation dependencies.constraintLayout
-    implementation dependencies.vectorDrawable
+    implementation dependencies.rxJava2
+    implementation dependencies.rxAndroid
 
-    //Dagger
-    implementation dependencies.dagger
-    kapt dependencies.daggerCompiler
-
-    //Test
     testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.runner
-    androidTestImplementation testDependencies.expresso
+}
+repositories {
+    mavenCentral()
 }
