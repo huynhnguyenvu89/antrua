@@ -21,7 +21,7 @@ class GoogleLocationProvider(private val context: Context) : LocationProvider {
             LocationServices.getFusedLocationProviderClient(context)
                 .lastLocation
                 .addOnSuccessListener {
-                    if (it == null){
+                    if (it == null) {
                         emitter.onError(LocationProvider.NoLocationException())
                     } else if (!emitter.isDisposed) {
                         emitter.onSuccess(it)
@@ -37,20 +37,23 @@ class GoogleLocationProvider(private val context: Context) : LocationProvider {
         anyOf = [ Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.ACCESS_FINE_LOCATION ])
     override fun getLocation(accuracy: LocationProvider.Accuracy, maxWaitTime: Long?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        TODO("not implemented")
     }
 
     @RequiresPermission(
         anyOf = [ Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.ACCESS_FINE_LOCATION ])
     override fun getLocationAvailability(): Single<Boolean> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        TODO("not implemented")
     }
 
     @RequiresPermission(
         anyOf = [ Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.ACCESS_FINE_LOCATION ])
-    override fun getLocations(accuracy: LocationProvider.Accuracy, fastestInternal: Long): Observable<Location> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun getLocations(
+        accuracy: LocationProvider.Accuracy,
+        fastestInternal: Long
+    ): Observable<Location> {
+        TODO("not implemented")
     }
 }

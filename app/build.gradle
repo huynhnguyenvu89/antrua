@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply from: '../buildsystem/ktlint.gradle'
+
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
 

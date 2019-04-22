@@ -28,8 +28,10 @@ interface LocationProvider {
     @RequiresPermission(
         anyOf = [ Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.ACCESS_FINE_LOCATION ])
-    fun getLocation(accuracy: Accuracy = Accuracy.BALANCED,
-                    maxWaitTime: Long? = null)
+    fun getLocation(
+        accuracy: Accuracy = Accuracy.BALANCED,
+        maxWaitTime: Long? = null
+    )
 
     @RequiresPermission(
         anyOf = [ Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -39,8 +41,10 @@ interface LocationProvider {
     @RequiresPermission(
         anyOf = [ Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.ACCESS_FINE_LOCATION ])
-    fun getLocations(accuracy: Accuracy = Accuracy.BALANCED,
-                     fastestInternal: Long) : Observable<Location>
+    fun getLocations(
+        accuracy: Accuracy = Accuracy.BALANCED,
+        fastestInternal: Long
+    ): Observable<Location>
 
-    class NoLocationException: Exception()
+    class NoLocationException : Exception()
 }
