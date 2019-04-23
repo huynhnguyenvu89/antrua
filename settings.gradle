@@ -1,1 +1,1 @@
-include ':app', ':location_domain', ':location_data'
+include ':app', ':location_domain', ':location_data', ':meal_list_data'

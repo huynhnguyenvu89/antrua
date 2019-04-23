@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/location_data" />
             <option value="$PROJECT_DIR$/location_domain" />
+            <option value="$PROJECT_DIR$/meal_list_data" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

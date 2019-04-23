@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply from: '../buildsystem/ktlint.gradle'
 
@@ -23,7 +22,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -31,17 +29,12 @@ dependencies {
     def testDependencies = rootProject.ext.testDependencies
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation dependencies.kotlin
     implementation dependencies.rxJava2
     implementation dependencies.rxAndroid
-    implementation dependencies.playServicesLocation
-
-    implementation project(':location_domain')
 
     testImplementation testDependencies.junit
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-}
-repositories {
-    mavenCentral()
 }
