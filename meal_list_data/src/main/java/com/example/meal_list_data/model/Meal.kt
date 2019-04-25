@@ -10,3 +10,15 @@ data class Meal(
     val distance: Long,
     val isFavorite: Boolean = false
 )
+
+/**
+ * DELETE ME: Testing purpose only
+ * Use https://chex-triplebyte.herokuapp.com/api/cats?page=0
+ * To fetch fake cat data
+ */
+data class Cat(
+    val title: String,
+    val timeStamp: String,
+    val imageUrl: String,
+    val description: String
+)

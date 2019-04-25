@@ -41,6 +41,7 @@ dependencies {
     implementation dependencies.vectorDrawable
 
     //Dagger
+    implementation dependencies.daggerAndroid
     implementation dependencies.dagger
     kapt dependencies.daggerCompiler
 
@@ -48,4 +49,7 @@ dependencies {
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.runner
     androidTestImplementation testDependencies.expresso
+
+    //Modules
+    implementation project(path: ':meal_list_data')
 }

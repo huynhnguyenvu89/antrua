@@ -26,6 +26,7 @@ ext {
     supportDesignVersion = "28.0.0"
     constraintLayoutVersion = "1.1.3"
     vectorDrawableVersion = '28.0.0'
+    retrofitVersion = '2.5.0'
 
     //Test
     expressoVersion = '3.0.2'
@@ -35,6 +36,7 @@ ext {
     dependencies = [
             dagger: "com.google.dagger:dagger:${daggerVersion}",
             daggerCompiler: "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerAndroid: "com.google.dagger:dagger-android:${daggerVersion}",
             kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}",
             supportAppCompatV7: "com.android.support:appcompat-v7:${appCompatVersion}",
             supportDesign: "com.android.support:design:${supportDesignVersion}",
@@ -42,7 +44,8 @@ ext {
             vectorDrawable: "com.android.support:support-vector-drawable:${vectorDrawableVersion}",
             rxJava2: "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxAndroid: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            playServicesLocation: "com.google.android.gms:play-services-location:${playServiceVersion}"
+            playServicesLocation: "com.google.android.gms:play-services-location:${playServiceVersion}",
+            retrofit: "com.squareup.retrofit2:retrofit:${retrofitVersion}"
     ]
 
     testDependencies = [
