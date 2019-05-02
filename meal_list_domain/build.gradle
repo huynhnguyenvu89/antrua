@@ -1,11 +1,11 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
-apply from: '../buildsystem/ktlint.gradle'
-apply plugin: 'kotlin-kapt'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
     compileSdkVersion globalConfiguration.get("androidCompileSdkVersion")
+
 
     defaultConfig {
         minSdkVersion globalConfiguration.get("androidMinSdkVersion")
@@ -23,6 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -38,15 +39,11 @@ dependencies {
     testImplementation testDependencies.junit
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    // Dependency Injection
-    implementation dependencies.dagger
-    kapt dependencies.daggerCompiler
-
-    //Library
-    implementation dependencies.retrofit
-
-    //Modules
-    implementation project(path: ':meal_list_domain')
+    //Module
     implementation project(path: ':core')
+}
+repositories {
+    mavenCentral()
 }

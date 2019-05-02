@@ -1,1 +1,1 @@
-include ':presentation', ':location_domain', ':location_data', ':meal_list_data'
+include ':presentation', ':location_domain', ':location_data', ':meal_list_data', ':meal_list_domain', ':core'
