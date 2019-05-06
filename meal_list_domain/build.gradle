@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
@@ -43,6 +44,9 @@ dependencies {
 
     //Module
     implementation project(path: ':core')
+
+    //Libraries
+    implementation dependencies.dagger
 }
 repositories {
     mavenCentral()
